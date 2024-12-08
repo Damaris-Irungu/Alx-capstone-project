@@ -1,0 +1,1 @@
+When I made the pull request, I modified the some of the CSS styling in RecipeDetail component to make the app more appealing.
