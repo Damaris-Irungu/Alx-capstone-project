@@ -2,7 +2,7 @@
 export default 
   module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-    darkMode: media, // You can set it to 'media' or 'class' if needed
+    darkMode: false, // You can set it to 'media' or 'class' if needed
   theme: {
     extend: {},
   },
