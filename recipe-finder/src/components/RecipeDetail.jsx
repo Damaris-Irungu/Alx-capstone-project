@@ -28,7 +28,7 @@ const RecipeDetail = () => {
           alt={recipe.title}
           className="w-full h-64 object-cover"
         />
-        <div className="p-6">
+        <div className="p-5">
           <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
           <p className="text-gray-600 mb-6">{recipe.summary}</p>
           <h2 className="text-2xl font-semibold mb-2">Ingredients:</h2>
