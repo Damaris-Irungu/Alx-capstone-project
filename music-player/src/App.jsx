@@ -5,6 +5,7 @@ import './App.css'
 import { fetchMusicData } from './services/deezerService'
 import Homepage from './components/Homepage'
 import SearchBar from './components/SearchBar'
+import TrackCard from './components/TrackCard'
 
 function App() {
   const [count, setCount] = useState(0)

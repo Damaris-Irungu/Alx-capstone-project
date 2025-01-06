@@ -13,7 +13,7 @@ const Homepage = ({ onSearch }) => {
     <div
       className="min-h-screen bg-cover bg-center text-black"
       style={{
-        backgroundImage: "url('src/images/Background img.jpg')",
+        backgroundImage: "url('https://t4.ftcdn.net/jpg/07/54/47/49/360_F_754474987_q7U248KiWeD8Aj4ycAv68lufp7vO04h7.jpg')",
       }}
     >
       {/* Overlay for better text visibility */}
