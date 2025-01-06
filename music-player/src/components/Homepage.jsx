@@ -11,16 +11,16 @@ const Homepage = ({ onSearch }) => {
 
   return (
     <div
-      className="h-screen w-full bg-cover bg-center text-black"
+      className="h-full w-full bg-cover bg-center text-white"
       style={{
         backgroundImage: "url('https://t4.ftcdn.net/jpg/07/54/47/49/360_F_754474987_q7U248KiWeD8Aj4ycAv68lufp7vO04h7.jpg')",
       }}
     >
       {/* Overlay for better text visibility */}
-      <div className="bg-black bg-opacity-50 max-h-screen flex flex-col justify-center items-center">
+      <div className="bg-transparent max-h-screen flex flex-col justify-center items-center">
         {/* Banner Section */}
         <div className="text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Your Favorite Tunes</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Discover Your Favorite Tunes</h1>
           <p className="text-lg md:text-xl text-white-300 mb-6">
             Search, play, and enjoy music from your favorite artists and albums.
           </p>
