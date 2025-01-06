@@ -2,10 +2,9 @@ import React from 'react';
 
 const TrackCard = () => {
   const trackDetails = {
-    trackTitle: "Angel Numbers / Ten Toes",
+    trackTitle: "Angel Numbers \/ Ten Toes",
     artistName: "Chris Brown",
-    albumCover:
-      "Album Cover 1.jpg",
+    albumCover:"https:\/\/api.deezer.com\/album\/510479581\/image",
     albumName: "11:11",
   };
 
