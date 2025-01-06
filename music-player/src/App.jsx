@@ -8,33 +8,47 @@ import SearchBar from './components/SearchBar'
 import TrackCard from './components/TrackCard'
 import MusicPlayer from './components/MusicPlayer'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [tracks, setTracks] = useState([]);
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleSearch = async (query) => {
+    try {
+      const data = await fetchMusicData(query);
+      setTracks(data.data);
+      setError(null);
+    } catch (e) {
+      setError('Could not fetch music data. Please try again.');
+    }
+  };
+
+  const handlePlay = (track) => {
+    setCurrentTrack(track);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="font-sans bg-gray-900 text-white min-h-screen">
+      {tracks.length === 0 ? (
+        <Homepage onSearch={handleSearch} />
+      ) : (
+        <div className="p-4">
+          <h1 className="text-2xl font-bold mb-4">Search Results</h1>
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {tracks.map((track) => (
+              <TrackCard key={track.id} track={track} onPlay={handlePlay} />
+            ))}
+          </div>
+          {currentTrack && (
+            <div className="mt-6">
+              <MusicPlayer currentTrack={currentTrack} />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default App

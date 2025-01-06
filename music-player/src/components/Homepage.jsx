@@ -20,7 +20,7 @@ const Homepage = ({ onSearch }) => {
       <div className="bg-black bg-opacity-50 min-h-screen flex flex-col justify-center items-center">
         {/* Banner Section */}
         <div className="text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Discover Your Favorite Tunes</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Your Favorite Tunes</h1>
           <p className="text-lg md:text-xl text-white-300 mb-6">
             Search, play, and enjoy music from your favorite artists and albums.
           </p>
