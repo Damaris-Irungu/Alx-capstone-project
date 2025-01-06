@@ -17,7 +17,7 @@ const Homepage = ({ onSearch }) => {
       }}
     >
       {/* Overlay for better text visibility */}
-      <div className="bg-black bg-opacity-50 min-h-screen flex flex-col justify-center items-center">
+      <div className="bg-black bg-opacity-50 max-h-screen flex flex-col justify-center items-center">
         {/* Banner Section */}
         <div className="text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Your Favorite Tunes</h1>
