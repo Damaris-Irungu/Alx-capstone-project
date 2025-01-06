@@ -11,9 +11,9 @@ const Homepage = ({ onSearch }) => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center text-white"
+      className="min-h-screen bg-cover bg-center text-black"
       style={{
-        backgroundImage: "url('Background img.jpg')",
+        backgroundImage: "url('src/images/Background img.jpg')",
       }}
     >
       {/* Overlay for better text visibility */}
