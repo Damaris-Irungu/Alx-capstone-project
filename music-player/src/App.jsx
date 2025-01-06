@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { fetchMusicData } from './services/deezerService'
 import Homepage from './components/Homepage'
+import SearchBar from './components/SearchBar'
 
 function App() {
   const [count, setCount] = useState(0)
