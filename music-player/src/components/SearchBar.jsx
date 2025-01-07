@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
     <form onSubmit={handleSubmit} className="flex gap-2">
       <input
         type="text"
-        placeholder="Search for tracks, artists, albums..."
+        placeholder="Search for songs, artists, albums..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="border rounded px-4 py-2 flex-1"

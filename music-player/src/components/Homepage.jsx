@@ -12,12 +12,11 @@ const Homepage = ({ onSearch }) => {
 
   return (
     <div
-      className="h-full w-full bg-cover bg-no-repeat bg-center"
+      className="h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white"
       style={{
         backgroundImage: "url('https://t4.ftcdn.net/jpg/07/54/47/49/360_F_754474987_q7U248KiWeD8Aj4ycAv68lufp7vO04h7.jpg')",
       }}
     >
-
         {/* Banner Section */}
         <div className="text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Welcome to Musiquey</h1>
