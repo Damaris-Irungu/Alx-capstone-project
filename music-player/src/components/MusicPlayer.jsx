@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { fetchMusicData } from "../services/deezerService";
 
 const MusicPlayer = () => {
   // Static album details for Chris Brown's 11:11

@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchMusicData } from '../services/deezerService';
 
 const TrackCard = () => {
   const trackDetails = {
