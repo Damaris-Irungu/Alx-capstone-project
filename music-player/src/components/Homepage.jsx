@@ -12,7 +12,7 @@ const Homepage = ({ onSearch }) => {
 
   return (
     <div
-      className="h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-white "
+      className="h-screen w-full bg-cover bg-center justify-center items-center text-white "
       style={{
         backgroundImage: "url('https://t4.ftcdn.net/jpg/07/54/47/49/360_F_754474987_q7U248KiWeD8Aj4ycAv68lufp7vO04h7.jpg')",
       }}

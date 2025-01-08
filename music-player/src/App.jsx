@@ -24,26 +24,43 @@ const App = () => {
     setCurrentTrack(track);
   };
 
+  // Sample data for Chris Brown's "11:11" album
+  const trackDetails = {
+    trackTitle: "11:11",
+    artistName: "Chris Brown",
+    albumCover:
+      "https:\/\/api.deezer.com\/album\/510479581\/image",
+    albumName: "11:11",
+  };
+
   return (
-    <div className="font-sans text-white ">
-      {tracks.length === 0 ? (
-        <Homepage onSearch={handleSearch} />
-      ) : (
-        <div className="p-4">
-          <h1 className="text-2xl font-bold mb-4">Search Results</h1>
-          {error && <p className="text-red-500 mb-4">{error}</p>}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {tracks.map((track) => (
-              <TrackCard key={track.id} track={track} onPlay={handlePlay} />
-            ))}
+    <div className="bg-gray-900 min-h-screen text-white">
+      {/* Homepage Section */}
+      <header>
+        <Homepage />
+      </header>
+
+      {/* Main Content */}
+      <main className="px-4 py-8 space-y-8">
+        {/* TrackCard Section */}
+        <section>
+          <h2 className="text-center text-3xl font-bold mb-6">Featured Track</h2>
+          <div className="flex justify-center">
+            <TrackCard
+              trackTitle={trackDetails.trackTitle}
+              artistName={trackDetails.artistName}
+              albumCover={trackDetails.albumCover}
+              albumName={trackDetails.albumName}
+            />
           </div>
-          {currentTrack && (
-            <div className="mt-6">
-              <MusicPlayer currentTrack={currentTrack} />
-            </div>
-          )}
-        </div>
-      )}
+        </section>
+
+        {/* MusicPlayer Section */}
+        <section>
+          <h2 className="text-center text-3xl font-bold mb-6">Now Playing</h2>
+          <MusicPlayer />
+        </section>
+      </main>
     </div>
   );
 };
