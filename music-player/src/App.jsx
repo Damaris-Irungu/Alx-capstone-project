@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { fetchMusicData } from './services/deezerService'
 import Homepage from './components/Homepage'
 import SearchBar from './components/SearchBar'
@@ -26,7 +25,7 @@ const App = () => {
   };
 
   return (
-    <div className="font-sans bg-gray-900 text-white min-h-screen">
+    <div className="font-sans text-white ">
       {tracks.length === 0 ? (
         <Homepage onSearch={handleSearch} />
       ) : (

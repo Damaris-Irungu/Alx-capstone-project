@@ -19,8 +19,8 @@ const Homepage = ({ onSearch }) => {
     >
         {/* Banner Section */}
         <div className="text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Welcome to Musiquey</h1>
-          <p className="text-lg md:text-xl text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white flex flex-col justify-center items-center">Welcome to Musiquey</h1>
+          <p className="text-lg md:text-xl text-white items-center" >
             Search, play, and enjoy music from your favorite artists and albums.
           </p>
 
@@ -29,7 +29,7 @@ const Homepage = ({ onSearch }) => {
             <input
               type="text"
               name="search"
-              placeholder="Search for songs, artists, albums..."
+              placeholder="Search for tracks, artists, albums..."
               className="flex-1 px-4 py-3 rounded-lg text-white focus:outline-none"
             />
             <button
