@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { fetchMusicData } from '../services/deezerService';
 
-
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
 
