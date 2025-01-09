@@ -30,7 +30,6 @@ const TrackCard = () => {
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-sm font-semibold"
           >
-            Play Preview
           </a>
         </div>
       </div>

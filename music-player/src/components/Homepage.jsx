@@ -14,32 +14,15 @@ const Homepage = ({ onSearch }) => {
     <div
       className="h-screen w-full bg-cover bg-center justify-center items-center text-white "
       style={{
-        backgroundImage: "url('https://t4.ftcdn.net/jpg/07/54/47/49/360_F_754474987_q7U248KiWeD8Aj4ycAv68lufp7vO04h7.jpg')",
+        backgroundImage: "url('https://static.vecteezy.com/system/resources/thumbnails/011/913/922/small_2x/abstract-pink-watercolor-background-pastel-soft-water-color-pattern-vector.jpg')",
       }}
     >
         {/* Banner Section */}
         <div className="text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white flex flex-col justify-center items-center">Welcome to Musiquey</h1>
-          <p className="text-lg md:text-xl text-white items-center" >
-            Search, play, and enjoy music from your favorite artists and albums.
-          </p>
+      
 
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="w-full max-w-lg flex gap-2">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search for tracks, artists, albums..."
-              className="flex-1 px-4 py-3 rounded-lg text-white focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg text-lg font-semibold"
-            >
-              Search
-            </button>
-          </form>
-        </div>
+          </div>
       </div>
   );
 };
