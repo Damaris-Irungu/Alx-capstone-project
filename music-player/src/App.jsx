@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { fetchMusicData } from './services/deezerService'
 import Homepage from './components/Homepage'
 import SearchBar from './components/SearchBar'
 import TrackCard from './components/TrackCard'
 import MusicPlayer from './components/MusicPlayer'
+
 
 const App = () => {
   const [tracks, setTracks] = useState([]);

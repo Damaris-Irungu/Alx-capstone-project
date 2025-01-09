@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { fetchMusicData } from '../services/deezerService';
 
 const Homepage = ({ onSearch }) => {
@@ -20,9 +21,10 @@ const Homepage = ({ onSearch }) => {
         {/* Banner Section */}
         <div className="text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white flex flex-col justify-center items-center">Welcome to Musiquey</h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-6">
+      <p className="text-lg md:text-xl text-gray-300 mb-6">
             Search, play, and enjoy music from your favorite artists and albums.
           </p>
+
 
           </div>
       </div>
