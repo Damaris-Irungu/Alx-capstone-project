@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://api.deezer.com/search?q=chris%20brown';
+const API_BASE_URL = 'https://api.deezer.com/search?q=chrisbrown';
 
 export const fetchMusicData = async (query) => {
   try {

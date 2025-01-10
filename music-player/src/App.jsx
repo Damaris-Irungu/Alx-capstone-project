@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { fetchMusicData } from './services/deezerService'
-import Homepage from './components/Homepage'
-import SearchBar from './components/SearchBar'
-import TrackCard from './components/TrackCard'
-import MusicPlayer from './components/MusicPlayer'
-
+import { fetchMusicData } from './services/deezerService';
+import Homepage from './components/Homepage';
+import SearchBar from './components/SearchBar';
+import TrackCard from './components/TrackCard';
+import MusicPlayer from './components/MusicPlayer';
 
 const App = () => {
   const [tracks, setTracks] = useState([]);
@@ -33,75 +32,98 @@ const App = () => {
 
   // Sample data for Chris Brown's "11:11" album
   const trackDetails = {
-    trackTitle: 'Angel Numbers \/ Ten Toes, ',
+    trackTitle: 'Angel Numbers / Ten Toes',
     artistName: 'Chris Brown',
     albumCover: 'https://api.deezer.com/album/510479581/image',
     albumName: '11:11',
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white">
-      {/* Homepage Section */}
-      <header>
-        <Homepage />
-      </header>
+    <Router>
+      <div className="bg-gray-900 min-h-screen text-white">
+        {/* Navigation */}
+        <nav className="p-4 bg-gray-800 flex justify-around">
+          <Link to="/" className="text-white hover:underline">
+            Homepage
+          </Link>
+          <Link to="/search" className="text-white hover:underline">
+            Search
+          </Link>
+          <Link to="/track" className="text-white hover:underline">
+            Track Card
+          </Link>
+          <Link to="/player" className="text-white hover:underline">
+            Music Player
+          </Link>
+        </nav>
 
-      {/* Main Content */}
-      <main className="px-4 py-8 space-y-8"
-      style={{
-        backgroundImage: "url('https://static.vecteezy.com/system/resources/thumbnails/011/913/922/small_2x/abstract-pink-watercolor-background-pastel-soft-water-color-pattern-vector.jpg')",
-      }}
-      >
-        {/* SearchBar Section */}
-        <section>
-          <h2 className="text-center text-black text-3xl font-bold mb-6">Search for tracks, artists, albums...</h2>
-          <div className="flex justify-center">
-            <SearchBar onSearch={handleSearch} />
-          </div>
-          {error && <p className="text-center text-red-600 mt-4">{error}</p>}
-        </section>
+        {/* Routes */}
+        <Routes>
+          {/* Homepage Route */}
+          <Route path="/" element={<Homepage />} />
 
-        {/* Tracks Listing Section */}
-        <section>
-          {tracks.length > 0 && (
-            <>
-              <h2 className="text-center text-3xl font-bold mb-6">Search Results</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {tracks.map((track) => (
-                  <TrackCard
-                    key={track.id}
-                    trackTitle={track.title}
-                    artistName={track.artist.name}
-                    albumCover={track.album.cover_medium}
-                    albumName={track.album.title}
-                    onPlay={() => handlePlay(track)}
-                  />
-                ))}
+          {/* SearchBar Route */}
+          <Route
+            path="/search"
+            element={
+              <div className="px-4 py-8">
+                <h2 className="text-center text-black text-3xl font-bold mb-6">
+                  Search for tracks, artists, albums...
+                </h2>
+                <div className="flex justify-center">
+                  <SearchBar onSearch={handleSearch} />
+                </div>
+                {loading && <p className="text-center text-gray-400 mt-4">Loading...</p>}
+                {error && <p className="text-center text-red-600 mt-4">{error}</p>}
+                {tracks.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+                    {tracks.map((track) => (
+                      <TrackCard
+                        key={track.id}
+                        trackTitle={track.title}
+                        artistName={track.artist.name}
+                        albumCover={track.album.cover_medium}
+                        albumName={track.album.title}
+                        onPlay={() => handlePlay(track)}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
-            </>
-          )}
-        </section>
+            }
+          />
 
-        {/* TrackCard Section */}
-        <section>
-          <h2 className="text-center text-black text-3xl font-bold mb-6">Featured Track</h2>
-          <div className="flex justify-center">
-            <TrackCard
-              trackTitle={trackDetails.trackTitle}
-              artistName={trackDetails.artistName}
-              albumCover={trackDetails.albumCover}
-              albumName={trackDetails.albumName}
-            />
-          </div>
-        </section>
+          {/* TrackCard Route */}
+          <Route
+            path="/track"
+            element={
+              <div className="px-4 py-8">
+                <h2 className="text-center text-black text-3xl font-bold mb-6">Featured Track</h2>
+                <div className="flex justify-center">
+                  <TrackCard
+                    trackTitle={trackDetails.trackTitle}
+                    artistName={trackDetails.artistName}
+                    albumCover={trackDetails.albumCover}
+                    albumName={trackDetails.albumName}
+                  />
+                </div>
+              </div>
+            }
+          />
 
-        {/* MusicPlayer Section */}
-        <section>
-          <h2 className="text-center text-black text-3xl font-bold mb-6">Now Playing</h2>
-          <MusicPlayer track={currentTrack} />
-        </section>
-      </main>
-    </div>
+          {/* MusicPlayer Route */}
+          <Route
+            path="/player"
+            element={
+              <div className="px-4 py-8">
+                <h2 className="text-center text-black text-3xl font-bold mb-6">Now Playing</h2>
+                <MusicPlayer track={currentTrack} />
+              </div>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

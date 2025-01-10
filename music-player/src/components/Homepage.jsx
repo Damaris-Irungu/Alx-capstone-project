@@ -24,23 +24,7 @@ const Homepage = ({ onSearch }) => {
       <p className="text-lg md:text-xl text-white mb-6">
             Search, play, and enjoy music from your favorite artists and albums.
           </p>
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="w-full max-w-lg flex gap-2 items-center">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search for songs, artists, albums..."
-              className="flex-1 px-4 py-3 rounded-lg text-black focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-200"
-      >
-              Search
-            </button>
-          </form>
-
-
+    
           </div>
       </div>
   );
