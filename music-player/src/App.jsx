@@ -54,11 +54,11 @@ const App = () => {
       >
         {/* SearchBar Section */}
         <section>
-          <h2 className="text-center text-3xl font-bold mb-6">Search for tracks, artists, albums...</h2>
+          <h2 className="text-center text-black text-3xl font-bold mb-6">Search for tracks, artists, albums...</h2>
           <div className="flex justify-center">
             <SearchBar onSearch={handleSearch} />
           </div>
-          {error && <p className="text-center text-red-500 mt-4">{error}</p>}
+          {error && <p className="text-center text-red-600 mt-4">{error}</p>}
         </section>
 
         {/* Tracks Listing Section */}
@@ -84,7 +84,7 @@ const App = () => {
 
         {/* TrackCard Section */}
         <section>
-          <h2 className="text-center text-3xl font-bold mb-6">Featured Track</h2>
+          <h2 className="text-center text-black text-3xl font-bold mb-6">Featured Track</h2>
           <div className="flex justify-center">
             <TrackCard
               trackTitle={trackDetails.trackTitle}
@@ -97,7 +97,7 @@ const App = () => {
 
         {/* MusicPlayer Section */}
         <section>
-          <h2 className="text-center text-3xl font-bold mb-6">Now Playing</h2>
+          <h2 className="text-center text-black text-3xl font-bold mb-6">Now Playing</h2>
           <MusicPlayer track={currentTrack} />
         </section>
       </main>
