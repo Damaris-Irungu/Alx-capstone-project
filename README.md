@@ -1,0 +1,1 @@
+This is the final capstone project for the ALX Front End Development course by Damaris Irungu. The idea explored in the project is a Music-Player App dubbed "Musiquey", which utilizes React and TailwindCSS as well as external API to help users search and play their favourite music from their favourite artists.
