@@ -8,6 +8,7 @@ const TrackCard = () => {
     artistName: "Chris Brown",
     albumCover:"https:\/\/api.deezer.com\/album\/510479581\/image",
     albumName: "11:11",
+    previewUrl:"https:\/\/www.deezer.com\/track\/2534909521",
   };
 
   return (
