@@ -4,7 +4,7 @@ import { fetchMusicData } from "../services/deezerService";
 
 const MusicPlayer = () => {
   // Static album details for Chris Brown's 11:11
-  const albumDetails = {
+  const trackDetails = {
     trackTitle: "Angel Numbers \/ Ten Toes",
     artistName: "Chris Brown",
     albumCover:
@@ -16,7 +16,7 @@ const MusicPlayer = () => {
 
   // State for playback
   const [isPlaying, setIsPlaying] = useState(false);
-  const audio = new Audio(albumDetails.previewUrl);
+  const audio = new Audio(trackDetails.previewUrl);
 
   const togglePlayPause = () => {
     if (isPlaying) {
@@ -38,17 +38,17 @@ const MusicPlayer = () => {
       {/* Album Cover */}
       <div className="flex justify-center">
         <img
-          src={albumDetails.albumCover}
-          alt={`${albumDetails.albumName} Cover`}
+          src={trackDetails.albumCover}
+          alt={`${trackDetails.albumName} Cover`}
           className="w-48 h-48 object-cover rounded-lg shadow-md"
         />
       </div>
 
       {/* Track Details */}
       <div className="mt-4 text-center">
-        <h2 className="text-2xl font-bold">{albumDetails.trackTitle}</h2>
-        <p className="text-gray-400">By: {albumDetails.artistName}</p>
-        <p className="text-gray-400">Album: {albumDetails.albumName}</p>
+        <h2 className="text-2xl font-bold">{trackDetails.trackTitle}</h2>
+        <p className="text-gray-400">By: {trackDetails.artistName}</p>
+        <p className="text-gray-400">Album: {trackDetails.albumName}</p>
       </div>
 
       {/* Playback Controls */}
@@ -65,6 +65,7 @@ const MusicPlayer = () => {
         >
           Stop
         </button>
+        
       </div>
     </div>
   );
