@@ -40,7 +40,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="bg-gray-900 min-h-screen text-white">
+      <div className="bg-black min-h-screen text-white">
         {/* Navigation */}
         <nav className="p-4 bg-gray-800 flex justify-around">
           <Link to="/" className="text-white hover:underline">
